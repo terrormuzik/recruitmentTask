@@ -6,7 +6,7 @@ import static org.mockito.Mockito.when;
 import com.empik.model.dto.GithubUserResponse;
 import com.empik.service.GithubService;
 import com.empik.service.UserRequestCountService;
-import com.empik.service.UserService;
+import com.empik.service.UserCalculationService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,7 +24,7 @@ class UserControllerTest {
   private UserRequestCountService userRequestCountService;
 
   @Mock
-  private UserService userService;
+  private UserCalculationService userCalculationService;
 
   @InjectMocks
   private UserController uut;
@@ -72,6 +72,6 @@ class UserControllerTest {
     uut.getUser(LOGIN);
 
     //then
-    verify(userService).runCalculations(FOLLOWERS, PUBLIC_REPOS);
+    verify(userCalculationService).runCalculations(FOLLOWERS, PUBLIC_REPOS);
   }
 }

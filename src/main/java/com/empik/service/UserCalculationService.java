@@ -4,7 +4,7 @@ import com.empik.exception.CannotRunCalculationsException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService {
+public class UserCalculationService {
 
   public float runCalculations(int followers, int publicRepos) {
     if (followers == 0) {

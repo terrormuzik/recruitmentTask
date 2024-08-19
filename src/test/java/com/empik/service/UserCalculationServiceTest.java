@@ -10,9 +10,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-class UserServiceTest {
+class UserCalculationServiceTest {
 
-  private static final UserService uut = new UserService();
+  private static final UserCalculationService uut = new UserCalculationService();
 
   @ParameterizedTest()
   @MethodSource("provideTestData")

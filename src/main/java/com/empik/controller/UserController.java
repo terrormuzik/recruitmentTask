@@ -4,7 +4,7 @@ import com.empik.model.dto.GithubUserResponse;
 import com.empik.model.dto.UserResponse;
 import com.empik.service.GithubService;
 import com.empik.service.UserRequestCountService;
-import com.empik.service.UserService;
+import com.empik.service.UserCalculationService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,14 +20,14 @@ public class UserController {
 
   private final GithubService githubService;
   private final UserRequestCountService userRequestCountService;
-  private final UserService userService;
+  private final UserCalculationService userCalculationService;
 
   @GetMapping(value = "/{userLogin}")
   public UserResponse getUser(@PathVariable String userLogin) {
     log.info("[GET] getUser endpoint called with param: {}", userLogin);
     userRequestCountService.incrementRequestCount(userLogin);
     GithubUserResponse githubUserResponse = githubService.getUser(userLogin);
-    float calculations = userService.runCalculations(githubUserResponse.followers(),
+    float calculations = userCalculationService.runCalculations(githubUserResponse.followers(),
         githubUserResponse.public_repos());
     return new UserResponse(githubUserResponse, calculations);
   }
