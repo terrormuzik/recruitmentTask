@@ -1,10 +1,10 @@
-package com.empik.dao;
+package com.empik.repository;
 
 import com.empik.model.UserRequestCount;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRequestCountDao extends CrudRepository<UserRequestCount, String> {
+public interface UserRequestCountRepository extends CrudRepository<UserRequestCount, String> {
 
 }

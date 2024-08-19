@@ -1,4 +1,4 @@
-package com.empik.dto;
+package com.empik.model.dto;
 
 import java.time.Instant;
 

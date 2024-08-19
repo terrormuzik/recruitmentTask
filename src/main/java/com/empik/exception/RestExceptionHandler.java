@@ -1,4 +1,4 @@
-package com.empik;
+package com.empik.exception;
 
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
@@ -19,7 +19,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
   @ExceptionHandler(HttpClientErrorException.class)
   protected ResponseEntity<Object> handleEntityNotFound(
       HttpClientErrorException ex) {
-    log.error("Not able to retrieve user from external API: {}", ex.getMessage());
+    log.warn("Not able to retrieve user from external API: {}", ex.getMessage());
     return new ResponseEntity<>(NOT_FOUND);
   }
 
