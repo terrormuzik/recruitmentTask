@@ -24,4 +24,4 @@ example response:
 
 example CURL:
 
-curl --request GET http://localhost:8080/users/octocat
+curl GET http://localhost:8080/users/octocat
