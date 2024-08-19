@@ -2,7 +2,7 @@ Github user bridge
 
 Project is written using JDK 22.01
 to run tests and build, use 'mvn clean install'
-after running the application, the endpoint for fetching used details is exposed under:
+after running the application, the endpoint for fetching user details is exposed under:
 
 (GET) http://localhost:8080/users/{user_login}
 
